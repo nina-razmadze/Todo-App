@@ -10,6 +10,11 @@ export default function CustomSearch() {
     setInputValue(event.target.value);
   };
 
+  const handleSearch = () => {
+    setSearch(true);
+    console.log(search);
+  };
+
   return (
     <form className="w-[530px]" onSubmit={handleSearch}>
       <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">

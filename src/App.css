@@ -4,6 +4,11 @@
   padding: 2rem;
   text-align: center;
 }
+.custom-enter-button {
+  background-color: #cf1322; /* Change this to your desired button color */
+  border-color: #cf1322; /* Change this to match the background color */
+  color: #fff; /* Change this to your desired text color */
+}
 
 .logo {
   height: 6em;

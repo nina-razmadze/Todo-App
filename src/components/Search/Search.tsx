@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContext";
+import { ValueContext } from "../../contexts/InputValueContext";
 
 export default function CustomSearch() {
   const { search, setSearch } = useContext(SearchContext);
-
-  const [inputValue, setInputValue] = useState();
+  const { inputValue, setInputValue } = useContext(ValueContext);
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);

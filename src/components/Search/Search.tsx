@@ -1,6 +1,15 @@
+import { useState } from "react";
+
 export default function CustomSearch() {
+  const [todo, setTodo] = useState();
+
+  const handleInputChange = (event: any) => {
+    event.preventdefault();
+    setTodo(event.target.value);
+    console.log(todo);
+  };
   return (
-    <form className="w-80">
+    <form className="w-[530px]">
       <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
         Search
       </label>
@@ -25,13 +34,14 @@ export default function CustomSearch() {
         <input
           type="search"
           id="default-search"
-          className="block w-full p-4 pl-10 text-sm text-gray-900 bg-gray-700 rounded-lg "
+          className="block w-full p-4 pl-10 text-sm text-gray-900 bg-customPrimary rounded-lg focus:border-red-500 focus:ring focus:ring-customPrimary focus:outline-none"
           placeholder="Search Mockups, Logos..."
           required
+          onChange={handleInputChange}
         />
         <button
           type="submit"
-          className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          className="text-white absolute right-2.5 bottom-2.5 hover:bg-customPrimary focus:border-red-500 focus:ring focus:ring-customPrimary font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 hover:border-red-600 focus:outline-none"
         >
           Search
         </button>

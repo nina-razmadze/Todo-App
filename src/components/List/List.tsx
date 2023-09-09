@@ -6,15 +6,11 @@ import { ValueContext } from "../../contexts/InputValueContext";
 export default function List() {
   const { search, setSearch } = useContext(SearchContext);
   const { inputValue, setInputValue } = useContext(ValueContext);
-
   const [listItems, setListItems] = useState([]);
 
-  const handleAddItem = () => {
-    if (search) {
-      setListItems([...listItems, inputValue]);
-      setInputValue("");
-    }
-  };
+  if (search) {
+    console.log(inputValue);
+  }
   return (
     <div className="mx-auto p-4 w-[530px]">
       <ul className="space-y-2">

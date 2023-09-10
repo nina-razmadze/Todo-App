@@ -8,9 +8,16 @@ export default function Footer() {
     setList([]);
   };
   return (
-    <div className="flex justify-between items-center mt-6">
-      <div>Count</div>
-      <button onClick={deleteAllItems}>delete All</button>
+    <div className="flex justify-between items-center mt-6 bg-customPrimary  ">
+      <button className="bg-SecondPrimary hover:border-red-600  hover:bg-customPrimary">
+        Count
+      </button>
+      <button
+        onClick={deleteAllItems}
+        className="bg-customPrimary hover:border-red-600"
+      >
+        delete All
+      </button>
     </div>
   );
 }

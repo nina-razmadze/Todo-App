@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ListContext } from "../../contexts/ListContext";
 import { ValueContext } from "../../Providers/ValueProvider";
 
@@ -7,17 +7,12 @@ export default function CustomSearch() {
   const { value, setValue } = useContext(ValueContext);
 
   const handleInputChange = (event: any) => {
-    event.preventDefault();
     setValue(event.target.value);
-    console.log(value);
   };
 
   const handleAddItem = (event: React.FormEvent) => {
     event.preventDefault();
-    if (value) {
-      setList([...list, value]);
-      setValue("");
-    }
+    setList([...list, value]);
   };
 
   return (

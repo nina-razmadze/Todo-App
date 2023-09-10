@@ -1,4 +1,6 @@
-export default function ListItem({ inputValue }: any) {
+export default function ListItem({ inputValue, key }: any) {
+  console.log(key);
+
   return (
     <li className="flex items-center justify-between">
       <div className="flex items-center space-x-2">

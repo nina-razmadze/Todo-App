@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ListContext } from "../../contexts/ListContext";
 import { ValueContext } from "../../Providers/ValueProvider";
+import classNames from "classnames";
 
 export default function CustomSearch() {
   const { list, setList } = useContext(ListContext);
@@ -13,9 +14,10 @@ export default function CustomSearch() {
   const handleAddItem = (event: React.FormEvent) => {
     event.preventDefault();
     if (list.includes(value)) {
-      return null;
     } else if (value.trim() !== "") {
       setList([...list, value]);
+      setValue("");
+      console.log("Value cleared");
     }
   };
 
@@ -42,6 +44,7 @@ export default function CustomSearch() {
           className="block w-full p-4 pl-10 text-sm text-white bg-customPrimary rounded-lg focus:border-red-500 focus:ring focus:ring-customPrimary focus:outline-none"
           placeholder="Search Mockups, Logos..."
           required
+          value={value}
           onChange={handleInputChange}
         />
         <button

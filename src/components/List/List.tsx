@@ -11,6 +11,7 @@ export default function List() {
   const deleteAllItems = () => {
     setList([]);
   };
+
   const handleRemove = (id: any) => {
     setList((prevlist) => prevlist.filter((item) => item !== id));
   };

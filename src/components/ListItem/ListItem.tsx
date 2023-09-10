@@ -1,4 +1,8 @@
+import classNames from "classnames";
+import { useState } from "react";
+
 export default function ListItem({ item, onRemove }: any) {
+  const [chechkbox, setCheckBox] = useState(false);
   // const handleDelete = (index: any) => {
   //   setList((prevState) => prevState.filter((_item, index) => index !== index));
   // };
@@ -6,8 +10,16 @@ export default function ListItem({ item, onRemove }: any) {
   return (
     <li className="flex items-center justify-between">
       <div className="flex items-center space-x-2">
-        <input type="checkbox" className="w-5 h-5" />
-        <span className="line-through">{item}</span>
+        <input
+          type="checkbox"
+          className="w-5 h-5"
+          onClick={() => setCheckBox(true)}
+        />
+        <span
+          className={classNames({ "line-through": chechkbox ? true : false })}
+        >
+          {item}
+        </span>
       </div>
 
       <button

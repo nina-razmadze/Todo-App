@@ -3,9 +3,6 @@ import { useState } from "react";
 
 export default function ListItem({ item, onRemove }: any) {
   const [chechkbox, setCheckBox] = useState(false);
-  // const handleDelete = (index: any) => {
-  //   setList((prevState) => prevState.filter((_item, index) => index !== index));
-  // };
 
   return (
     <li className="flex items-center justify-between">

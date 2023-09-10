@@ -11,8 +11,10 @@ export default function App() {
         <ListProvider>
           <ValueProvider>
             {/* <h1 className="text-2xl font-semibold mb-4">Todo List</h1> */}
-            <Search />
-            <List />
+            <div className="max-h-[300px] overflow-auto">
+              <Search />
+              <List />
+            </div>
           </ValueProvider>
         </ListProvider>
       </div>

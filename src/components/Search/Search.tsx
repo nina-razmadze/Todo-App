@@ -13,7 +13,7 @@ export default function CustomSearch() {
   const handleAddItem = (event: React.FormEvent) => {
     event.preventDefault();
     if (list.includes(value)) {
-      setValue("");
+      return null;
     } else if (value.trim() !== "") {
       setList([...list, value]);
     }

@@ -1,12 +1,7 @@
-import { useContext } from "react";
-import { ListContext } from "../../contexts/ListContext";
-
-export default function ListItem({ item }: any) {
-  const { list, setList } = useContext(ListContext);
-
-  const handleDelete = () => {
-    setList((prevState) => prevState.filter((index) => index !== index));
-  };
+export default function ListItem({ item, onRemove }: any) {
+  // const handleDelete = (index: any) => {
+  //   setList((prevState) => prevState.filter((_item, index) => index !== index));
+  // };
 
   return (
     <li className="flex items-center justify-between">
@@ -17,7 +12,7 @@ export default function ListItem({ item }: any) {
 
       <button
         className="text-red-500 hover:text-red-700"
-        onClick={handleDelete}
+        onClick={() => onRemove(item)}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

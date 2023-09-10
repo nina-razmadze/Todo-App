@@ -1,12 +1,9 @@
 import ListItem from "../ListItem/ListItem";
-import {  useContext } from "react";
+import { useContext } from "react";
 import { ListContext } from "../../contexts/ListContext";
-import { v4 as uuidv4 } from "uuid";
 
 export default function List() {
   const { list, setList } = useContext(ListContext);
-
-  const uniqueId = uuidv4();
 
   const deleteAllItems = () => {
     setList([]);

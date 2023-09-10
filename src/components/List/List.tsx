@@ -8,9 +8,9 @@ export default function List() {
 
   const uniqueId = uuidv4();
 
-  // const deleteAllItems = () => {
-  //   setList([]);
-  // };
+  const deleteAllItems = () => {
+    setList([]);
+  };
 
   const handleRemove = (id: any) => {
     setList((prevlist) => prevlist.filter((item) => item !== id));

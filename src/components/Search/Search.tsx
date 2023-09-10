@@ -12,7 +12,6 @@ export default function CustomSearch() {
 
   const handleSearch = () => {
     setSearch(true);
-    console.log(search);
   };
 
   return (

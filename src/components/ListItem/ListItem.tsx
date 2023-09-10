@@ -1,11 +1,9 @@
-
-export default function ListItem() {
-
+export default function ListItem({ inputValue }: any) {
   return (
     <li className="flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <input type="checkbox" className="w-5 h-5" />
-        <span className="line-through">Complete task 1</span>
+        <span className="line-through">{inputValue}</span>
       </div>
 
       <button className="text-red-500 hover:text-red-700">

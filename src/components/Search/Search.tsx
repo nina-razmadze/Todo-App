@@ -22,7 +22,7 @@ export default function CustomSearch() {
   };
 
   return (
-    <form className="w-[530px]" onSubmit={handleAddItem}>
+    <form className="w-[530px] relative" onSubmit={handleAddItem}>
       <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
         Search
       </label>
@@ -41,7 +41,7 @@ export default function CustomSearch() {
         <input
           type="search"
           id="default-search"
-          className="block w-full p-4 pl-10 text-sm text-white bg-customPrimary rounded-lg focus:border-red-500 focus:ring focus:ring-customPrimary focus:outline-none"
+          className="block w-[530px] p-4 pl-10 text-sm text-white bg-customPrimary rounded-lg focus:border-red-500 focus:ring focus:ring-customPrimary focus:outline-none  "
           placeholder="Search Mockups, Logos..."
           required
           value={value}

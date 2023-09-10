@@ -8,9 +8,7 @@ export default function List() {
 
   const uniqueId = uuidv4();
 
-  const deleteAllItems = () => {
-    setList([]);
-  };
+ 
 
   const handleRemove = (id: any) => {
     setList((prevlist) => prevlist.filter((item) => item !== id));
@@ -28,7 +26,6 @@ export default function List() {
           ></ListItem>
         ))}
       </ul>
-      <button onClick={deleteAllItems}>delete All</button>
     </div>
   );
 }

@@ -1,21 +1,24 @@
 import { useState, useContext } from "react";
 import { SearchContext } from "../../contexts/SearchContext";
 import { ValueContext } from "../../contexts/InputValueContext";
+import { ListContext } from "../../contexts/ListContext";
 
 export default function CustomSearch() {
-  const { search, setSearch } = useContext(SearchContext);
   const { inputValue, setInputValue } = useContext(ValueContext);
+  const { list, setList } = useContext(ListContext);
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
   };
 
-  const handleSearch = () => {
-    setSearch(true);
+  const handleAddItem = () => {
+    if (inputValue) {
+      setList([...list, inputValue]);
+      setInputValue("");
+    }
   };
-
   return (
-    <form className="w-[530px]" onSubmit={handleSearch}>
+    <form className="w-[530px]" onSubmit={handleAddItem}>
       <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
         Search
       </label>

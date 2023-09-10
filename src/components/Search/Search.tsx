@@ -1,22 +1,25 @@
-import { useState, useContext } from "react";
-import { SearchContext } from "../../contexts/SearchContext";
-import { ValueContext } from "../../contexts/InputValueContext";
+import { useState, useContext, useEffect } from "react";
 import { ListContext } from "../../contexts/ListContext";
+import { ValueContext } from "../../Providers/ValueProvider";
 
 export default function CustomSearch() {
-  const { inputValue, setInputValue } = useContext(ValueContext);
   const { list, setList } = useContext(ListContext);
+  const { value, setValue } = useContext(ValueContext);
 
   const handleInputChange = (event: any) => {
-    setInputValue(event.target.value);
+    event.preventDefault();
+    setValue(event.target.value);
+    console.log(value);
   };
 
-  const handleAddItem = () => {
-    if (inputValue) {
-      setList([...list, inputValue]);
-      setInputValue("");
+  const handleAddItem = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (value) {
+      setList([...list, value]);
+      setValue("");
     }
   };
+
   return (
     <form className="w-[530px]" onSubmit={handleAddItem}>
       <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">

@@ -12,7 +12,11 @@ export default function CustomSearch() {
 
   const handleAddItem = (event: React.FormEvent) => {
     event.preventDefault();
-    setList([...list, value]);
+    if (list.includes(value)) {
+      return null;
+    } else {
+      setList([...list, value]);
+    }
   };
 
   return (
@@ -44,7 +48,7 @@ export default function CustomSearch() {
           type="submit"
           className="text-white absolute right-2.5 bottom-2.5 hover:bg-customPrimary focus:border-red-500 focus:ring focus:ring-customPrimary font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 hover:border-red-600 focus:outline-none"
         >
-          Search
+          Add Task
         </button>
       </div>
     </form>

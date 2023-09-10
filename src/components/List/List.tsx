@@ -6,8 +6,6 @@ import { v4 as uuidv4 } from "uuid";
 
 export default function List() {
   const { list, setList } = useContext(ListContext);
-  const { value } = useContext(ValueContext);
-  const uniqueId = uuidv4();
 
   const deleteAllItems = () => {
     setList([]);
@@ -16,8 +14,8 @@ export default function List() {
   return (
     <div className="mx-auto p-4 w-[530px]">
       <ul className="space-y-2">
-        {list.map((index, item) => (
-          <ListItem key={uniqueId} inputValue={value} />
+        {list.map((item, index) => (
+          <ListItem key={index} item={item}></ListItem>
         ))}
       </ul>
       <button onClick={deleteAllItems}>delete All</button>

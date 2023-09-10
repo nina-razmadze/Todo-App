@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ListContext } from "../../contexts/ListContext";
 
-export default function ListItem({ inputValue, key }: any) {
+export default function ListItem({ item }: any) {
   const { list, setList } = useContext(ListContext);
 
   const handleDelete = () => {
@@ -12,7 +12,7 @@ export default function ListItem({ inputValue, key }: any) {
     <li className="flex items-center justify-between">
       <div className="flex items-center space-x-2">
         <input type="checkbox" className="w-5 h-5" />
-        <span className="line-through">{inputValue}</span>
+        <span className="line-through">{item}</span>
       </div>
 
       <button

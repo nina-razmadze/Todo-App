@@ -6,15 +6,15 @@ export default function CustomSearch() {
   const { list, setList } = useContext(ListContext);
   const { value, setValue } = useContext(ValueContext);
 
-  const handleInputChange = (event: any) => {
-    setValue(event.target.value);
+  const handleInputChange = (e: any) => {
+    setValue(e.target.value);
   };
 
   const handleAddItem = (event: React.FormEvent) => {
     event.preventDefault();
     if (list.includes(value)) {
-      return null;
-    } else {
+      setValue("");
+    } else if (value.trim() !== "") {
       setList([...list, value]);
     }
   };
